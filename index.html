@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коммерческое предложение | BILERMAN.KG | ASYSTEM</title>
+    <meta name="description" content="Разработка платформы безопасного бронирования жилья BILERMAN.KG от компании ASYSTEM">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #f97316;
+            --primary-dark: #ea580c;
+            --secondary: #3b82f6;
+            --secondary-dark: #2563eb;
+            --navy: #1e3a5f;
+            --navy-dark: #172554;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-svg {
+            height: 28px;
+            width: auto;
+        }
+
+        .logo-svg path {
+            fill: #ffffff;
+        }
+
+        .header-date {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: white;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            max-width: 600px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        /* About Project */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 1px solid var(--gray-200);
+        }
+
+        .about-card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .about-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: var(--gray-600);
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            border: 2px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Рекомендуем';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            text-align: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 24px;
+        }
+
+        .pricing-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-desc {
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-price {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .pricing-price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .pricing-features {
+            flex: 1;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .pricing-btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .pricing-btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .pricing-btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+        }
+
+        .pricing-btn-secondary:hover {
+            background: var(--gray-200);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            padding-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 48px;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-marker {
+            width: 42px;
+            height: 42px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-200);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .timeline-date {
+            background: var(--gray-100);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .timeline-desc {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .timeline-tasks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .timeline-task {
+            background: var(--gray-100);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        /* Risks */
+        .risks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .risk-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid var(--warning);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .risk-card.high {
+            border-left-color: var(--danger);
+        }
+
+        .risk-card.low {
+            border-left-color: var(--success);
+        }
+
+        .risk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .risk-title {
+            font-weight: 700;
+        }
+
+        .risk-level {
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .risk-level.high {
+            background: #fef2f2;
+            color: var(--danger);
+        }
+
+        .risk-level.medium {
+            background: #fffbeb;
+            color: var(--warning);
+        }
+
+        .risk-level.low {
+            background: #ecfdf5;
+            color: var(--success);
+        }
+
+        .risk-desc {
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .risk-mitigation {
+            background: var(--gray-50);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .risk-mitigation strong {
+            color: var(--success);
+        }
+
+        /* Comparison Table */
+        .comparison-wrapper {
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .comparison-table th {
+            background: var(--navy);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table th:first-child {
+            border-radius: 12px 0 0 0;
+        }
+
+        .comparison-table th:last-child {
+            border-radius: 0 12px 0 0;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .comparison-table tr:last-child td:first-child {
+            border-radius: 0 0 0 12px;
+        }
+
+        .comparison-table tr:last-child td:last-child {
+            border-radius: 0 0 12px 0;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .contact-text {
+            font-size: 16px;
+        }
+
+        .contact-text small {
+            display: block;
+            opacity: 0.7;
+            font-size: 13px;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 32px;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-group select option {
+            color: var(--gray-800);
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Utilities */
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .mb-8 { margin-bottom: 8px; }
+        .mb-16 { margin-bottom: 16px; }
+        .mb-24 { margin-bottom: 24px; }
+        .mb-32 { margin-bottom: 32px; }
+        .mb-48 { margin-bottom: 48px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .header-date {
+                display: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+        }
+
+        /* Urgency banner */
+        .urgency-banner {
+            background: linear-gradient(90deg, var(--danger) 0%, #dc2626 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .urgency-banner span {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        /* Market section */
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .market-stat {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .market-stat-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .market-stat-label {
+            color: var(--gray-600);
+            margin-top: 8px;
+        }
+
+        /* Guarantee */
+        .guarantee-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 12px;
+        }
+
+        .guarantee-text {
+            color: var(--gray-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Print styles */
+        @media print {
+            .header {
+                position: static;
+            }
+
+            .urgency-banner {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .pricing-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .pricing-card.featured {
+                border: 3px solid var(--primary) !important;
+            }
+
+            .contact-form {
+                display: none;
+            }
+
+            .section {
+                padding: 40px 0;
+                page-break-inside: avoid;
+            }
+
+            .about-card, .pricing-card, .risk-card, .timeline-item {
+                page-break-inside: avoid;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        До начала сезона Иссык-Куль осталось 4 месяца <span>Старт разработки до 10 февраля</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1802.21 232.49">
+                        <path d="M1760.98 3.69l-90.07 107.27 -90.07 -107.27 -37.54 0 0 225.11 22.51 0c9.99,0 15.03,-5 15.03,-15.03l0 -163.53 90.07 107.27 90.07 -107.27 0 163.53c0,9.98 4.99,15.03 15.03,15.03l22.51 0 0 -225.11 -37.54 0z"/>
+                        <path d="M1490.83 198.8l-161.36 0 0 -67.55 161.36 0 0 -30 -161.36 0 0 -67.55 157.56 0c9.98,0 15.03,-4.99 15.03,-15.03l0 -15.03 -210.14 0 0 225.11 213.89 0 0 -15.03c0,-9.98 -5,-15.03 -15.03,-15.03l0.05 0.1z"/>
+                        <path d="M1031.21 3.69l0 15.03c0,9.98 4.99,15.03 15.03,15.03l82.52 0 0 195.11 37.55 0 0 -195.11 82.53 0c9.98,0 15.03,-4.99 15.03,-15.03l0 -15.03 -232.66 0 0 0z"/>
+                        <path d="M945.54 101.24l-90.07 0c-22.52,0 -33.74,-11.23 -33.74,-33.75 0,-22.51 11.23,-33.75 33.74,-33.75l131.3 0c9.98,0 15.03,-4.99 15.03,-15.03l0 -15.03 -153.82 0c-42.54,0 -63.81,21.27 -63.81,63.8 0,42.54 21.27,63.8 63.81,63.8l90.06 0c22.52,0 33.75,11.24 33.75,33.75 0,22.52 -11.23,33.75 -33.75,33.75l-135.1 0c-9.98,0 -15.03,4.99 -15.03,15.03l0 15.03 157.57 0c42.54,0 63.81,-21.27 63.81,-63.8 0,-42.54 -21.27,-63.8 -63.81,-63.8l0.05 0z"/>
+                        <path d="M735.4 3.69c-9.98,0 -18.45,4.99 -25.94,15.03l-67.22 92.24 -67.23 -92.24c-7.49,-9.98 -15.95,-15.03 -25.94,-15.03l-26.91 0 101.3 138.84 0 86.32 37.54 0 0 -86.32 101.3 -138.84 -26.91 0 0 0z"/>
+                        <path d="M436.5 101.24l-90.07 0c-22.52,0 -33.75,-11.23 -33.75,-33.75 0,-22.51 11.23,-33.75 33.75,-33.75l131.3 0c9.98,0 15.03,-4.99 15.03,-15.03l0 -15.03 -153.82 0c-42.54,0 -63.8,21.27 -63.8,63.8 0,42.54 21.26,63.8 63.8,63.8l90.07 0c22.52,0 33.75,11.24 33.75,33.75 0,22.52 -11.23,33.75 -33.75,33.75l-135.1 0c-9.99,0 -15.03,4.99 -15.03,15.03l0 15.03 157.56 0c42.54,0 63.81,-21.27 63.81,-63.8 0,-42.54 -21.27,-63.8 -63.81,-63.8l0.06 0z"/>
+                        <path d="M148.23 3.69l-37.54 0 -105.04 225.11 22.19 0c9.98,0 17.53,-5 22.19,-15.03 34.66,-74.22 34.56,-74.55 79.43,-170.43 47.96,102.44 42.21,90.72 79.43,170.43 4.66,9.98 12.21,15.03 22.19,15.03l22.19 0 -105.04 -225.11 0 0z"/>
+                        <path d="M148.23 145.46c-5.37,-5.37 -12.8,-8.73 -21.05,-8.73 -8.19,0 -15.69,3.31 -21.05,8.73 -5.37,5.37 -8.73,12.8 -8.73,21.05 0,8.25 3.31,15.68 8.68,21.05 5.37,5.37 12.86,8.73 21.05,8.73 8.19,0 15.68,-3.31 21.05,-8.73 5.37,-5.37 8.73,-12.8 8.73,-21.05 0,-8.2 -3.32,-15.68 -8.73,-21.05l0.05 0z"/>
+                    </svg>
+                </div>
+                <div class="header-date">Коммерческое предложение от 28.01.2026</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" style="background: var(--primary); font-weight: 600;">Успеть к сезону Иссык-Куль 2026</div>
+                <h1>Разработка платформы<br><span>BILERMAN.KG</span></h1>
+                <p class="hero-subtitle">
+                    Первая в Кыргызстане платформа безопасного бронирования жилья
+                    с эскроу-защитой платежей и автоматической генерацией договоров
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">недель до запуска</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1 мая</div>
+                        <div class="stat-label">готовность к сезону</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">варианта сотрудничества</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Project -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">О проекте BILERMAN.KG</h2>
+            <p class="section-subtitle">
+                Платформа для безопасного бронирования жилья в Кыргызстане
+                с уникальной функцией эскроу-защиты платежей
+            </p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">🗺️</div>
+                    <h3>Карта как в 2GIS</h3>
+                    <p>Интерактивная карта на главной странице с геолокацией, маркерами объектов и умными фильтрами поиска</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">🔒</div>
+                    <h3>Эскроу-защита</h3>
+                    <p>Деньги клиента защищены до момента заселения. Арендодатель получает оплату только после check-in</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">📄</div>
+                    <h3>Автодоговоры</h3>
+                    <p>Автоматическая генерация PDF-договоров с подстановкой реквизитов партнёра и клиента</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">📱</div>
+                    <h3>PWA приложение</h3>
+                    <p>Работает как веб-сайт и устанавливается на телефон. Офлайн-режим и push-уведомления</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">👥</div>
+                    <h3>3 роли пользователей</h3>
+                    <p>Клиенты, Партнёры (арендодатели) и Сотрудники платформы с разными уровнями доступа</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">💰</div>
+                    <h3>Финансовый учёт</h3>
+                    <p>Автоматические выплаты партнёрам, комиссии платформы, история транзакций</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Рыночная возможность</h2>
+            <p class="section-subtitle">
+                Рынок краткосрочной аренды в Кыргызстане растёт, а конкурентов с эскроу-защитой нет
+            </p>
+
+            <div class="market-stats">
+                <div class="market-stat">
+                    <div class="market-stat-value">$40M</div>
+                    <div class="market-stat-label">Рынок частной аренды КР в год</div>
+                </div>
+                <div class="market-stat">
+                    <div class="market-stat-value">70%</div>
+                    <div class="market-stat-label">Клиентов сталкивались с мошенничеством</div>
+                </div>
+                <div class="market-stat">
+                    <div class="market-stat-value">0</div>
+                    <div class="market-stat-label">Конкурентов с эскроу-защитой</div>
+                </div>
+                <div class="market-stat">
+                    <div class="market-stat-value">10%</div>
+                    <div class="market-stat-label">Комиссия платформы</div>
+                </div>
+            </div>
+
+            <div class="guarantee-box" style="margin-top: 48px;">
+                <div class="guarantee-icon">📈</div>
+                <div class="guarantee-title">Потенциальная выручка 1-го года</div>
+                <div class="guarantee-text">
+                    При 3,000 бронирований со средним чеком 14,500 сом и комиссии 10%:<br>
+                    <strong style="font-size: 28px; color: var(--navy);">4,350,000 сом (~$50,000)</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Варианты сотрудничества</h2>
+            <p class="section-subtitle">
+                Выберите оптимальный вариант для вашего бюджета и сроков
+            </p>
+
+            <div class="pricing-grid">
+                <!-- Option 1: MVP -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">MVP Старт</div>
+                        <div class="pricing-desc">Быстрый запуск к сезону</div>
+                        <div class="pricing-price">$7,000 <span>USD</span></div>
+                        <div class="pricing-period">4 недели · Готов к 1 марта</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Карта с поиском объектов</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Фильтры (город, тип, цена, даты)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Страница объекта с галереей</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Email авторизация</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Создание бронирования</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>PWA (установка на телефон)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Базовый кабинет партнёра</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Адаптивный дизайн</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn pricing-btn-secondary">Выбрать MVP</a>
+                </div>
+
+                <!-- Option 2: Full -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Полный продукт</div>
+                        <div class="pricing-desc">Все функции к сезону Иссык-Куль</div>
+                        <div class="pricing-price">$12,000 <span>USD</span></div>
+                        <div class="pricing-period">7 недель · Готов к 15 апреля</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Всё из MVP +</strong></span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Платежи с эскроу (MBank, O!Dengi)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Автогенерация договоров PDF</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Полный онбординг партнёра</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Система отмен и неустоек</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Панель сотрудника (Staff)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Модерация объектов</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Отзывы и рейтинги</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Email уведомления</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Аналитика и отчёты</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn pricing-btn-primary">Выбрать полный</a>
+                </div>
+
+                <!-- Option 3: Partnership -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Партнёрство</div>
+                        <div class="pricing-desc">Совместный бизнес</div>
+                        <div class="pricing-price">$4,000 <span>+ %</span></div>
+                        <div class="pricing-period">+ 12% от выручки · 7 недель</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Всё из полного продукта</strong></span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Сниженная начальная стоимость</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Техническая поддержка 12 мес</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Обновления и улучшения</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Консультации по развитию</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Приоритетная поддержка</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Совместное развитие продукта</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Масштабирование инфраструктуры</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn pricing-btn-secondary">Обсудить партнёрство</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Сравнение вариантов</h2>
+            <p class="section-subtitle">
+                Детальное сравнение функционала по каждому варианту
+            </p>
+
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Функционал</th>
+                            <th>MVP Старт</th>
+                            <th>Полный продукт</th>
+                            <th>Партнёрство</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Интерактивная карта (Mapbox)</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Геолокация пользователя</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Фильтры и поиск</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>PWA (установка на телефон)</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Email авторизация</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Создание бронирования</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Базовый кабинет партнёра</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Платежи с эскроу</strong></td>
+                            <td>—</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Автогенерация договоров</strong></td>
+                            <td>—</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Система отмен и неустоек</strong></td>
+                            <td>—</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Панель сотрудника</strong></td>
+                            <td>—</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Модерация объектов</strong></td>
+                            <td>—</td>
+                            <td class="text-success">✓</td>
+                            <td class="text-success">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Техническая поддержка</td>
+                            <td>1 месяц</td>
+                            <td>3 месяца</td>
+                            <td class="text-success"><strong>12 месяцев</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Обновления</td>
+                            <td>—</td>
+                            <td>Критические</td>
+                            <td class="text-success"><strong>Все обновления</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Срок разработки</strong></td>
+                            <td><strong>4 недели</strong></td>
+                            <td><strong>7 недель</strong></td>
+                            <td><strong>7 недель</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Готовность</strong></td>
+                            <td><strong>1 марта</strong></td>
+                            <td><strong>15 апреля</strong></td>
+                            <td><strong>15 апреля</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Стоимость</strong></td>
+                            <td><strong>$7,000</strong></td>
+                            <td><strong>$12,000</strong></td>
+                            <td><strong>$4,000 + 12%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">План реализации</h2>
+            <p class="section-subtitle">
+                Поэтапная разработка с чёткими дедлайнами и результатами
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Публичный сайт с картой + Авторизация</div>
+                            <div class="timeline-date">3-17 февраля</div>
+                        </div>
+                        <p class="timeline-desc">
+                            Карта на главной, поиск, фильтры, страница объекта, PWA,
+                            регистрация и вход по email, создание бронирований.
+                        </p>
+                        <div class="timeline-tasks">
+                            <span class="timeline-task">Mapbox карта</span>
+                            <span class="timeline-task">Фильтры</span>
+                            <span class="timeline-task">Email авторизация</span>
+                            <span class="timeline-task">Бронирование</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Кабинет партнёра + Платежи</div>
+                            <div class="timeline-date">17 февраля - 10 марта</div>
+                        </div>
+                        <p class="timeline-desc">
+                            Онбординг партнёра с реквизитами, создание объектов, dashboard,
+                            интеграция платежей MBank, автогенерация договоров PDF.
+                        </p>
+                        <div class="timeline-tasks">
+                            <span class="timeline-task">Онбординг</span>
+                            <span class="timeline-task">CRUD объектов</span>
+                            <span class="timeline-task">MBank</span>
+                            <span class="timeline-task">Договоры PDF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Staff панель + Тестирование</div>
+                            <div class="timeline-date">10 марта - 1 апреля</div>
+                        </div>
+                        <p class="timeline-desc">
+                            Админ-панель для сотрудников, модерация объектов,
+                            отмены и неустойки, тестирование всех сценариев.
+                        </p>
+                        <div class="timeline-tasks">
+                            <span class="timeline-task">Staff панель</span>
+                            <span class="timeline-task">Модерация</span>
+                            <span class="timeline-task">Отмены</span>
+                            <span class="timeline-task">QA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Финализация + Онбординг партнёров</div>
+                            <div class="timeline-date">1-15 апреля</div>
+                        </div>
+                        <p class="timeline-desc">
+                            Деплой на production, оптимизация, онбординг первых 50+ партнёров,
+                            подготовка к сезону Иссык-Куль.
+                        </p>
+                        <div class="timeline-tasks">
+                            <span class="timeline-task">Production</span>
+                            <span class="timeline-task">Оптимизация</span>
+                            <span class="timeline-task">50+ партнёров</span>
+                            <span class="timeline-task">Маркетинг</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="background: var(--success);">✓</div>
+                    <div class="timeline-content" style="border-color: var(--success);">
+                        <div class="timeline-header">
+                            <div class="timeline-title" style="color: var(--success);">Запуск к сезону!</div>
+                            <div class="timeline-date" style="background: #ecfdf5; color: var(--success);">1 мая 2026</div>
+                        </div>
+                        <p class="timeline-desc">
+                            Платформа готова к началу сезона Иссык-Куль.
+                            Партнёры онбордены, объекты загружены, маркетинг запущен.
+                        </p>
+                        <div class="timeline-tasks">
+                            <span class="timeline-task" style="background: #ecfdf5; color: var(--success);">Готов к сезону</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Риски и митигация</h2>
+            <p class="section-subtitle">
+                Честная оценка рисков и план их минимизации
+            </p>
+
+            <div class="risks-grid">
+                <div class="risk-card high">
+                    <div class="risk-header">
+                        <div class="risk-title">Интеграция платежей</div>
+                        <span class="risk-level high">Высокий</span>
+                    </div>
+                    <p class="risk-desc">
+                        Получение API доступа к MBank и другим платёжным системам может занять время
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Начать переговоры с банками параллельно с разработкой.
+                        Предусмотреть fallback на ручные платежи.
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">Изменение требований</div>
+                        <span class="risk-level medium">Средний</span>
+                    </div>
+                    <p class="risk-desc">
+                        Возможны изменения в процессе разработки, влияющие на сроки
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Agile подход с еженедельными демо.
+                        Буфер 2 недели заложен в оценку.
+                    </div>
+                </div>
+
+                <div class="risk-card low">
+                    <div class="risk-header">
+                        <div class="risk-title">Технические сложности</div>
+                        <span class="risk-level low">Низкий</span>
+                    </div>
+                    <p class="risk-desc">
+                        Стек технологий проверенный, команда имеет опыт
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Использование существующей кодовой базы konok.
+                        Neon PostgreSQL уже настроен.
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">Доступность ресурсов</div>
+                        <span class="risk-level medium">Средний</span>
+                    </div>
+                    <p class="risk-desc">
+                        Загруженность команды другими проектами
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Выделенный разработчик на проект.
+                        Еженедельные отчёты о прогрессе.
+                    </div>
+                </div>
+
+                <div class="risk-card low">
+                    <div class="risk-header">
+                        <div class="risk-title">Юридические вопросы</div>
+                        <span class="risk-level low">Низкий</span>
+                    </div>
+                    <p class="risk-desc">
+                        Необходимость регистрации ОсОО и оформления документов
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Параллельная работа над юридикой.
+                        Шаблоны договоров готовятся заранее.
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-header">
+                        <div class="risk-title">Сезонность рынка</div>
+                        <span class="risk-level medium">Средний</span>
+                    </div>
+                    <p class="risk-desc">
+                        Основной сезон Иссык-Куль: июнь-август
+                    </p>
+                    <div class="risk-mitigation">
+                        <strong>Митигация:</strong> Запуск MVP к 1 мая 2026.
+                        Достаточно времени для онбординга партнёров.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Details -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Финансовые условия</h2>
+            <p class="section-subtitle">
+                Прозрачная структура оплаты
+            </p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">💵</div>
+                    <h3>График оплаты</h3>
+                    <p>
+                        <strong>40%</strong> — предоплата при старте<br>
+                        <strong>30%</strong> — после Фазы 2 (авторизация)<br>
+                        <strong>30%</strong> — после сдачи проекта
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">📋</div>
+                    <h3>Что включено</h3>
+                    <p>
+                        Дизайн и разработка<br>
+                        Тестирование и QA<br>
+                        Деплой на production<br>
+                        Документация<br>
+                        Обучение команды
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">🔧</div>
+                    <h3>Инфраструктура (отдельно)</h3>
+                    <p>
+                        Neon PostgreSQL: $0-25/мес<br>
+                        Vercel hosting: $0-20/мес<br>
+                        Railway backend: $5-50/мес<br>
+                        Mapbox: $0-50/мес<br>
+                        Домен: $15/год
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About ASYSTEM -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Почему ASYSTEM</h2>
+            <p class="section-subtitle">
+                Ведущая IT-компания Кыргызстана с опытом в цифровой трансформации
+            </p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">🏆</div>
+                    <h3>Опыт</h3>
+                    <p>Проекты для Министерства образования КР, криптоассоциации АУРВА, Tulpar Express</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">🤖</div>
+                    <h3>AI и автоматизация</h3>
+                    <p>Специализация на AI-ассистентах и системах автоматизации бизнес-процессов</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">🚀</div>
+                    <h3>Современный стек</h3>
+                    <p>React, FastAPI, PostgreSQL, Mapbox — проверенные технологии для масштабируемых решений</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-title">Наши гарантии</div>
+                <div class="guarantee-text">
+                    <strong>Запуск к 1 мая или возврат 20% стоимости.</strong><br><br>
+                    Еженедельные демо прогресса. Исходный код передаётся полностью.
+                    Техническая поддержка включена. Доработки по ТЗ без доплат.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            +996 772 67 19 24
+                            <small>Звоните в рабочее время</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            asyljan@gmail.com
+                            <small>Ответим в течение дня</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            Бишкек, ул. Суюмбаева 123/1
+                            <small>Офис ASYSTEM</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-text">
+                            @asylbek_aitmatov
+                            <small>Telegram / Instagram</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="mb-24">Оставить заявку</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label>Ваше имя</label>
+                            <input type="text" name="name" placeholder="Как к вам обращаться?" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон или Email</label>
+                            <input type="text" name="contact" placeholder="+996 XXX XXX XXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Интересующий вариант</label>
+                            <select name="plan" required>
+                                <option value="">Выберите вариант</option>
+                                <option value="mvp">MVP Старт ($7,000)</option>
+                                <option value="full">Полный продукт ($12,000)</option>
+                                <option value="partnership">Партнёрство ($4,000 + 12%)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Комментарий</label>
+                            <textarea name="message" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                        </div>
+                        <button type="submit" class="form-btn">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">ASYSTEM</div>
+            <p>© 2026 ASYSTEM. Все права защищены.</p>
+            <p style="margin-top: 8px; color: var(--primary);">Для запуска к сезону необходимо начать до 10 февраля 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
