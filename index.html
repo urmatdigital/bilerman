@@ -743,6 +743,312 @@
             .contact-form {
                 padding: 24px;
             }
+
+            .process-flow {
+                flex-direction: column;
+            }
+
+            .process-arrow {
+                transform: rotate(90deg);
+                padding: 8px 0;
+            }
+
+            .process-step {
+                min-width: 100%;
+            }
+
+            .role-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .money-flow {
+                flex-direction: column;
+            }
+
+            .flow-step.split {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .staff-capabilities {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Role sections */
+        .role-section {
+            margin-bottom: 64px;
+        }
+
+        .role-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+
+        .role-header.client-role {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid var(--secondary);
+        }
+
+        .role-header.partner-role {
+            background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+            border: 2px solid var(--primary);
+        }
+
+        .role-header.staff-role {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border: 2px solid #6366f1;
+        }
+
+        .role-icon {
+            font-size: 48px;
+        }
+
+        .role-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .role-info p {
+            color: var(--gray-600);
+        }
+
+        /* Process flow */
+        .process-flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 16px 0;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 180px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .process-step.success-step {
+            background: #ecfdf5;
+            border-color: var(--success);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .success-step .step-number {
+            background: var(--success);
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .step-content li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .step-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gray-400);
+        }
+
+        .process-arrow {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            color: var(--gray-300);
+            padding-top: 60px;
+        }
+
+        /* Dashboard preview */
+        .dashboard-preview {
+            background: var(--gray-50);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .dashboard-preview h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .dashboard-widgets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .widget {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .widget-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .widget-label {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        /* Staff capabilities */
+        .staff-capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .capability-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .capability-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .capability-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .capability-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .capability-card li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .capability-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+
+        /* Money flow */
+        .money-flow-section {
+            margin-top: 48px;
+        }
+
+        .money-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 32px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            border-radius: 16px;
+            margin-top: 24px;
+        }
+
+        .flow-step {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 24px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            min-width: 120px;
+        }
+
+        .flow-step.escrow {
+            background: rgba(249, 115, 22, 0.3);
+            border: 2px solid var(--primary);
+        }
+
+        .flow-step.split {
+            display: flex;
+            gap: 16px;
+            background: transparent;
+            padding: 0;
+        }
+
+        .flow-split-item {
+            background: rgba(255,255,255,0.1);
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .flow-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .flow-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .flow-amount {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .flow-amount.success {
+            color: #4ade80;
+        }
+
+        .flow-arrow {
+            font-size: 24px;
+            color: rgba(255,255,255,0.5);
         }
 
         /* Urgency banner */
@@ -1386,96 +1692,316 @@
         </div>
     </section>
 
-    <!-- Risks -->
+    <!-- Business Processes -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Риски и митигация</h2>
+            <h2 class="section-title">Бизнес-процессы по ролям</h2>
             <p class="section-subtitle">
-                Честная оценка рисков и план их минимизации
+                Детальное описание функционала для каждой роли пользователя
             </p>
 
-            <div class="risks-grid">
-                <div class="risk-card high">
-                    <div class="risk-header">
-                        <div class="risk-title">Интеграция платежей</div>
-                        <span class="risk-level high">Высокий</span>
-                    </div>
-                    <p class="risk-desc">
-                        Получение API доступа к MBank и другим платёжным системам может занять время
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Начать переговоры с банками параллельно с разработкой.
-                        Предусмотреть fallback на ручные платежи.
+            <!-- Client Role -->
+            <div class="role-section">
+                <div class="role-header client-role">
+                    <div class="role-icon">👤</div>
+                    <div class="role-info">
+                        <h3>Клиент (Арендатор)</h3>
+                        <p>Ищет и бронирует жильё для отдыха или командировки</p>
                     </div>
                 </div>
 
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <div class="risk-title">Изменение требований</div>
-                        <span class="risk-level medium">Средний</span>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Поиск жилья</h4>
+                            <ul>
+                                <li>Открывает карту на главной</li>
+                                <li>Разрешает геолокацию или выбирает город</li>
+                                <li>Применяет фильтры: даты, гости, цена, тип</li>
+                                <li>Видит маркеры объектов с ценами</li>
+                                <li>Листает карточки в списке</li>
+                            </ul>
+                        </div>
                     </div>
-                    <p class="risk-desc">
-                        Возможны изменения в процессе разработки, влияющие на сроки
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Agile подход с еженедельными демо.
-                        Буфер 2 недели заложен в оценку.
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Выбор объекта</h4>
+                            <ul>
+                                <li>Смотрит галерею фотографий</li>
+                                <li>Читает описание и удобства</li>
+                                <li>Проверяет рейтинг и отзывы</li>
+                                <li>Смотрит календарь доступности</li>
+                                <li>Видит политику отмены</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Бронирование</h4>
+                            <ul>
+                                <li>Выбирает даты check-in/out</li>
+                                <li>Указывает количество гостей</li>
+                                <li>Видит итоговую стоимость</li>
+                                <li>Регистрируется/входит по email</li>
+                                <li>Подтверждает бронирование</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Оплата (Эскроу)</h4>
+                            <ul>
+                                <li>Выбирает способ: MBank, O!Dengi, карта</li>
+                                <li>Сканирует QR или вводит данные</li>
+                                <li>Деньги уходят на эскроу-счёт</li>
+                                <li>Получает подтверждение и договор</li>
+                                <li>Деньги защищены до заселения!</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step success-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Заселение</h4>
+                            <ul>
+                                <li>Получает контакты партнёра</li>
+                                <li>Приезжает в назначенное время</li>
+                                <li>Партнёр подтверждает check-in</li>
+                                <li>После выезда оставляет отзыв</li>
+                                <li>При проблемах — 100% возврат</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner Role -->
+            <div class="role-section">
+                <div class="role-header partner-role">
+                    <div class="role-icon">🏠</div>
+                    <div class="role-info">
+                        <h3>Партнёр (Арендодатель)</h3>
+                        <p>Сдаёт своё жильё и получает клиентов через платформу</p>
                     </div>
                 </div>
 
-                <div class="risk-card low">
-                    <div class="risk-header">
-                        <div class="risk-title">Технические сложности</div>
-                        <span class="risk-level low">Низкий</span>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Регистрация</h4>
+                            <ul>
+                                <li>Создаёт аккаунт по email</li>
+                                <li>Выбирает тип: физлицо/ИП/ОсОО</li>
+                                <li>Заполняет данные компании</li>
+                                <li>Указывает ИНН и адрес</li>
+                                <li>Загружает документы</li>
+                            </ul>
+                        </div>
                     </div>
-                    <p class="risk-desc">
-                        Стек технологий проверенный, команда имеет опыт
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Использование существующей кодовой базы konok.
-                        Neon PostgreSQL уже настроен.
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Реквизиты для выплат</h4>
+                            <ul>
+                                <li>Указывает банк и БИК</li>
+                                <li>Вводит расчётный счёт</li>
+                                <li>Или номер MBank/Элсом</li>
+                                <li>Данные для договоров</li>
+                                <li>Верификация сотрудником</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Добавление объекта</h4>
+                            <ul>
+                                <li>Указывает тип и адрес на карте</li>
+                                <li>Заполняет характеристики</li>
+                                <li>Отмечает удобства</li>
+                                <li>Загружает 5-20 фото</li>
+                                <li>Устанавливает цену</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Управление</h4>
+                            <ul>
+                                <li>Видит календарь бронирований</li>
+                                <li>Блокирует даты вручную</li>
+                                <li>Получает уведомления</li>
+                                <li>Общается с клиентами</li>
+                                <li>Подтверждает check-in</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step success-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Выплаты</h4>
+                            <ul>
+                                <li>После check-in деньги готовы</li>
+                                <li>Получает 90% (комиссия 10%)</li>
+                                <li>Автовыплата в течение 24ч</li>
+                                <li>Видит историю и аналитику</li>
+                                <li>Договор формируется автоматически</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <div class="risk-title">Доступность ресурсов</div>
-                        <span class="risk-level medium">Средний</span>
+                <!-- Partner Dashboard Preview -->
+                <div class="dashboard-preview">
+                    <h4>Личный кабинет партнёра</h4>
+                    <div class="dashboard-widgets">
+                        <div class="widget">
+                            <div class="widget-value">45,000 ₸</div>
+                            <div class="widget-label">Доступно к выводу</div>
+                        </div>
+                        <div class="widget">
+                            <div class="widget-value">12,000 ₸</div>
+                            <div class="widget-label">На эскроу</div>
+                        </div>
+                        <div class="widget">
+                            <div class="widget-value">8</div>
+                            <div class="widget-label">Бронирований в месяц</div>
+                        </div>
+                        <div class="widget">
+                            <div class="widget-value">4.8 ★</div>
+                            <div class="widget-label">Средний рейтинг</div>
+                        </div>
                     </div>
-                    <p class="risk-desc">
-                        Загруженность команды другими проектами
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Выделенный разработчик на проект.
-                        Еженедельные отчёты о прогрессе.
+                </div>
+            </div>
+
+            <!-- Staff Role -->
+            <div class="role-section">
+                <div class="role-header staff-role">
+                    <div class="role-icon">👔</div>
+                    <div class="role-info">
+                        <h3>Сотрудник платформы (Staff)</h3>
+                        <p>Управляет платформой, модерирует контент, решает споры</p>
                     </div>
                 </div>
 
-                <div class="risk-card low">
-                    <div class="risk-header">
-                        <div class="risk-title">Юридические вопросы</div>
-                        <span class="risk-level low">Низкий</span>
+                <div class="staff-capabilities">
+                    <div class="capability-card">
+                        <div class="capability-icon">📊</div>
+                        <h4>Dashboard</h4>
+                        <ul>
+                            <li>Общая статистика платформы</li>
+                            <li>GMV и выручка в реальном времени</li>
+                            <li>Количество бронирований</li>
+                            <li>Новые регистрации</li>
+                            <li>Графики и тренды</li>
+                        </ul>
                     </div>
-                    <p class="risk-desc">
-                        Необходимость регистрации ОсОО и оформления документов
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Параллельная работа над юридикой.
-                        Шаблоны договоров готовятся заранее.
+                    <div class="capability-card">
+                        <div class="capability-icon">🏢</div>
+                        <h4>Управление партнёрами</h4>
+                        <ul>
+                            <li>Список всех партнёров</li>
+                            <li>Фильтр по компании/региону</li>
+                            <li>Верификация документов</li>
+                            <li>Просмотр объектов партнёра</li>
+                            <li>История выплат</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon">🏠</div>
+                        <h4>Модерация объектов</h4>
+                        <ul>
+                            <li>Очередь на модерацию</li>
+                            <li>Проверка фото и описаний</li>
+                            <li>Проверка GPS-координат</li>
+                            <li>Одобрение / Отклонение</li>
+                            <li>Комментарии для партнёра</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon">👥</div>
+                        <h4>Клиенты</h4>
+                        <ul>
+                            <li>Список всех клиентов</li>
+                            <li>История бронирований</li>
+                            <li>Связь клиент-партнёр</li>
+                            <li>Блокировка нарушителей</li>
+                            <li>Поддержка пользователей</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon">📋</div>
+                        <h4>Бронирования</h4>
+                        <ul>
+                            <li>Все бронирования платформы</li>
+                            <li>Фильтры по статусу/дате</li>
+                            <li>Детали каждого заказа</li>
+                            <li>Принудительная отмена</li>
+                            <li>Возвраты и компенсации</li>
+                        </ul>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon">⚖️</div>
+                        <h4>Арбитраж споров</h4>
+                        <ul>
+                            <li>Список открытых споров</li>
+                            <li>Переписка сторон</li>
+                            <li>Доказательства (фото)</li>
+                            <li>Решение: возврат/выплата</li>
+                            <li>Компенсационный фонд</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
 
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <div class="risk-title">Сезонность рынка</div>
-                        <span class="risk-level medium">Средний</span>
+            <!-- Money Flow -->
+            <div class="money-flow-section">
+                <h3 class="section-title" style="margin-top: 48px;">Движение денег (Эскроу)</h3>
+                <div class="money-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">👤</div>
+                        <div class="flow-label">Клиент платит</div>
+                        <div class="flow-amount">14,500 ₸</div>
                     </div>
-                    <p class="risk-desc">
-                        Основной сезон Иссык-Куль: июнь-август
-                    </p>
-                    <div class="risk-mitigation">
-                        <strong>Митигация:</strong> Запуск MVP к 1 мая 2026.
-                        Достаточно времени для онбординга партнёров.
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step escrow">
+                        <div class="flow-icon">🔒</div>
+                        <div class="flow-label">Эскроу-счёт</div>
+                        <div class="flow-amount">Защищено</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">✓</div>
+                        <div class="flow-label">Check-in</div>
+                        <div class="flow-amount">Подтверждён</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step split">
+                        <div class="flow-split-item">
+                            <div class="flow-icon">🏠</div>
+                            <div class="flow-label">Партнёру</div>
+                            <div class="flow-amount success">13,050 ₸ (90%)</div>
+                        </div>
+                        <div class="flow-split-item">
+                            <div class="flow-icon">🏢</div>
+                            <div class="flow-label">Платформе</div>
+                            <div class="flow-amount">1,450 ₸ (10%)</div>
+                        </div>
                     </div>
                 </div>
             </div>
